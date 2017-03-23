@@ -1,3 +1,26 @@
-<select *ngIf="options">
-    <option *ngFor="let option of options" value="{{option}}">{{option}}</option>
-</select>
+<div class="ng2-cbobx-container" 
+     [style.width]="width">
+
+    <input class="ng2-cbobx-selected-option" 
+           type="text" 
+           [(ngModel)]="selectedOption" 
+           (focus)="focusIn()"
+           (focusout)="focusOut()"
+           (keydown)="keydown()"
+           (keydown.ArrowDown)="arrowDown()"
+           (keydown.ArrowUp)="arrowUp()"
+           (keydown.Enter)="enterPressed()"
+           (keyup)="autoFilter && keyup()" />
+
+    <div class="ng2-cbobx-options" 
+         [class.open]="open" 
+         [style.width]="width">
+
+        <div class="ng2-cbobx-option" 
+             *ngFor="let option of filteredOptions; let i = index" 
+             (click)="selectOption(option)"
+             [class.hovered]="currentHoverIndex === i">
+            {{option}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+.ng2-cbobx-container, .ng2-cbobx-container * { box-sizing: border-box; }
+.ng2-cbobx-container {
+    position: relative;
+}
+
+.ng2-cbobx-selected-option {
+    width: 100%;
+    height: 25px;
+}
+
+/*.ng2-cbobx-options:hover,
+.ng2-cbobx-selected-option:focus + .ng2-cbobx-options {
+    display: block;
+}*/
+
+.ng2-cbobx-options {
+    display: none;
+    background-color: #eee;
+    position: absolute;
+    z-index: 1000;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.ng2-cbobx-options.open {
+    display: block;
+}
+
+.ng2-cbobx-option {
+    padding: 3px 5px;
+    cursor: pointer;
+}
+
+.ng2-cbobx-option:hover, .hovered {
+    background-color: #ddd;
+}

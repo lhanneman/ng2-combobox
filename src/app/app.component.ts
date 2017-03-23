@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  options = ['one', 'two', 'three', 'four'];
+  optionsA = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 
+  'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen'];
+
+  optionsB = ['oranges', 'apples', 'bananas'];
+  optionsC = ['Ford', 'Chevrolet', 'Subaru', 'Toyota'];
 }
