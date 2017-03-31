@@ -1,9 +1,23 @@
-<h2> ng2-combobox with all features enabled:</h2>
-<ng2-combobox [options]="optionsA" [manualEntry]="true" [autoFilter]="true"></ng2-combobox>
+<div style="width:500px;">
+    <h2>un-connected lists</h2>
+    <h4>with manual entry - CURRENT VALUE: {{ optionASelectedValue }}</h4>
+    <ng2-combobox [options]="optionsA" [manualEntry]="true" [autoFilter]="true" [valueProp]="optionAValueProp" [labelProp]="optionALabelProp"
+        (selectionChanged)="setOptionAValue($event)"></ng2-combobox>
 
-<h2>without manual-entry:</h2>
-<ng2-combobox [options]="optionsB"></ng2-combobox>
+    <h4>without manual-entry - CURRENT VALUE: {{ optionBSelectedValue }}</h4>
+    <ng2-combobox [options]="optionsA" [manualEntry]="false" [autoFilter]="true" [valueProp]="optionAValueProp" [labelProp]="optionALabelProp"
+        (selectionChanged)="setOptionBValue($event)"></ng2-combobox>
 
-<h2>with manual entry; no auto-filter:</h2>
-<ng2-combobox [options]="optionsC" [manualEntry]="true"></ng2-combobox>
+    <h4>with manual entry; no auto-filter - CURRENT VALUE: {{ optionCSelectedValue }}</h4>
+    <ng2-combobox [options]="optionsA" [manualEntry]="true" [autoFilter]="false" [valueProp]="optionAValueProp" [labelProp]="optionALabelProp"
+        (selectionChanged)="setOptionCValue($event)"></ng2-combobox>
 
+    <h2>Connected Lists demo</h2>
+    <h4>Pick a separator</h4>
+    <ng2-combobox #sepList [options]="separators" [manualEntry]="true" [valueProp]="separatorLabel" [labelProp]="separatorLabel"
+        (selectionChanged)="divList.clearSelection()"></ng2-combobox>
+
+    <h4>Pick a divider</h4>
+    <ng2-combobox #divList [options]="dividers" [manualEntry]="true" [valueProp]="dividerLabel" [labelProp]="dividerLabel" [connectTo]="sepList"
+        [connectToFilterProp]="dividerFilterProp"></ng2-combobox>
+</div>

@@ -1,26 +1,28 @@
-<div class="ng2-cbobx-container" 
-     [style.width]="width">
+width: {{ width }}
+<div class="ng2-cbobx-container">
 
     <input class="ng2-cbobx-selected-option" 
            type="text" 
            [(ngModel)]="selectedOption" 
-           (focus)="focusIn()"
-           (focusout)="focusOut()"
-           (keydown)="keydown()"
-           (keydown.ArrowDown)="arrowDown()"
-           (keydown.ArrowUp)="arrowUp()"
-           (keydown.Enter)="enterPressed()"
+           (focus)="focusIn()" 
+           (focusout)="focusOut()" 
+           (keydown)="keydown()" 
+           (keydown.ArrowDown)="arrowDown()" 
+           (keydown.ArrowUp)="arrowUp()" 
+           (keydown.Enter)="enterPressed()" 
            (keyup)="autoFilter && keyup()" />
 
+           <div class="ng2-cbobx-arrow"></div>
+
     <div class="ng2-cbobx-options" 
-         [class.open]="open" 
-         [style.width]="width">
+        [class.open]="open">
 
         <div class="ng2-cbobx-option" 
              *ngFor="let option of filteredOptions; let i = index" 
-             (click)="selectOption(option)"
+             (click)="selectOption(option)" 
              [class.hovered]="currentHoverIndex === i">
-            {{option}}
+            {{ option[labelProp] }}
+            <input type="hidden" class="ng2-cbobox-option-value" value="{{ option[valueProp] }}" />
         </div>
     </div>
 </div>

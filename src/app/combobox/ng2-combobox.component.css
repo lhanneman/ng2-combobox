@@ -1,25 +1,33 @@
 .ng2-cbobx-container, .ng2-cbobx-container * { box-sizing: border-box; }
 .ng2-cbobx-container {
     position: relative;
+    width: 100%;
+}
+
+.ng2-cbobx-container:hover * {
+    cursor: pointer;
+}
+
+.ng2-cbobx-container:hover > .ng2-cbobx-arrow {
+    border-top-color: #8e8c8d;
 }
 
 .ng2-cbobx-selected-option {
     width: 100%;
     height: 25px;
+    padding-left: 5px;
+    padding-right: 25px;
 }
-
-/*.ng2-cbobx-options:hover,
-.ng2-cbobx-selected-option:focus + .ng2-cbobx-options {
-    display: block;
-}*/
 
 .ng2-cbobx-options {
     display: none;
-    background-color: #eee;
+    background-color: #fff;
+    border: 1px solid #eee;
     position: absolute;
     z-index: 1000;
     max-height: 250px;
     overflow-y: auto;
+    width: 100%;
 }
 
 .ng2-cbobx-options.open {
@@ -33,4 +41,15 @@
 
 .ng2-cbobx-option:hover, .hovered {
     background-color: #ddd;
+}
+
+.ng2-cbobx-arrow {
+    width: 0; 
+    height: 0; 
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #d8d8d8;
+    position: absolute;
+    right: 10px;
+    top: 10px;
 }
