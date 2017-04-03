@@ -8,7 +8,6 @@ import { Component, Input, Output, AfterViewInit, ChangeDetectorRef, EventEmitte
 export class Ng2ComboboxComponent implements AfterViewInit {
   @Input() options: Array<string>;
   @Input() manualEntry = false;
-  // @Input() width: string = "100%";
   @Input() autoFilter = true;
   @Input() valueProp: string;
   @Input() labelProp: string;
